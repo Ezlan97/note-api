@@ -15,6 +15,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+//---------------------------- user authentication ----------------------------
+$router->post(
+  'auth/login', 
+  [
+     'uses' => 'AuthController@authenticate'
+  ]
+);
+
+//---------------------------- note CRUD --------------------------------
 $router->group(['prefix' => 'api'], function () use ($router) {
   $router->get('notes',  ['uses' => 'NoteController@showAllNotes']);
 
