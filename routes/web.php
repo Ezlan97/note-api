@@ -24,7 +24,7 @@ $router->post(
 );
 
 //---------------------------- note CRUD --------------------------------
-$router->group(['prefix' => 'api', 'middleware' => 'jwt.auth'], function () use ($router) {
+$router->group(['prefix' => 'api'], function () use ($router) {
   $router->get('notes',  ['uses' => 'NoteController@showAllNotes']);
 
   $router->get('notes/{id}', ['uses' => 'NoteController@showOneNote']);
