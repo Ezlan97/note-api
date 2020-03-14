@@ -27,11 +27,11 @@ $router->post(
 $router->group(['prefix' => 'api'], function () use ($router) {
   $router->get('notes',  ['uses' => 'NoteController@showAllNotes']);
 
-  $router->get('notes/{id}', ['uses' => 'NoteController@showOneNote']);
+  $router->get('notes/show/{id}', ['uses' => 'NoteController@showOneNote']);
 
-  $router->post('notes', ['uses' => 'NoteController@create']);
+  $router->post('notes/create', ['uses' => 'NoteController@create']);
 
-  $router->delete('notes/{id}', ['uses' => 'NoteController@delete']);
+  $router->delete('notes/delete/{id}', ['uses' => 'NoteController@delete']);
 
-  $router->put('notes/{id}', ['uses' => 'NoteController@update']);
+  $router->put('notes/update/{id}', ['uses' => 'NoteController@update']);
 });
